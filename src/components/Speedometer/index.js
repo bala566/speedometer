@@ -3,21 +3,24 @@ import {Component} from 'react'
 import './index.css'
 
 class Speedometer extends Component {
-  state = {count: 0}
+  state = {speed: 0}
+
   onAccelerate = () => {
-    this.setState(prevState => {
-      console.log(`previous state value ${prevState.count}`)
-      return {count: prevState + 1}
-    })
+    const {speed} = this.state
+    if (speed < 200) {
+      this.setState(prevState => ({speed: prevState.speed + 10}))
+    }
   }
+
   onApplyBreak = () => {
-    this.setState(prevState => {
-      console.log(`previous state value ${prevState.count}`)
-      return {count: prevState + 1}
-    })
+    const {speed} = this.state
+    if (speed > 0) {
+      this.setState(prevState => ({speed: prevState.speed - 10}))
+    }
   }
+
   render() {
-    const {count} = this.state
+    const {speed} = this.state
     return (
       <div className="container">
         <h1 className="heading">SPEEDOMETER</h1>
@@ -26,14 +29,22 @@ class Speedometer extends Component {
           className="image"
           alt="speedometer"
         />
-        <h1 className="heading2">The Speed is {count}mph</h1>
+        <h1 className="heading2">Speed is {speed}mph</h1>
         <p className="paragraph">Min Limit is 0mph, Max Limit is 200mph</p>
-        <div className="button">
-          <button type="button" className="btn1" onClick={this.onAccelerate}>
+        <div className="btn-container">
+          <button
+            type="button"
+            className="button btn1"
+            onClick={this.onAccelerate}
+          >
             Accelerate
           </button>
-          <button type="button" className="btn2" onClick={this.onApplyBreak}>
-            Apply Break
+          <button
+            type="button"
+            className="button btn2"
+            onClick={this.onApplyBreak}
+          >
+            Apply Brake
           </button>
         </div>
       </div>

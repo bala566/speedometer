@@ -9,13 +9,13 @@
 }
 .heading {
   font-family: 'Roboto';
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 600;
   color: #ffffff;
 }
 .image {
-  height: 100px;
-  width: 50px;
+  height: 200px;
+  width: 400px;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -23,14 +23,13 @@
 }
 .heading2 {
   font-family: 'Roboto';
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #ffffff;
 }
 .paragraph {
   font-family: 'Roboto';
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 14px;
   color: #cbd5e1;
 }
 .count {
